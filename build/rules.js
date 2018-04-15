@@ -28,6 +28,13 @@ export function rules(env) {
                 'css-loader',
                 'sass-loader'
             ]
+        },
+        {
+            test   : /\.(png)$/,
+            use    : [
+                'file-loader'
+            ],
+            include: config.src
         }
     ];
 }
