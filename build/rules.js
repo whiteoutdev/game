@@ -20,6 +20,14 @@ export function rules(env) {
             use : [
                 'raw-loader'
             ]
+        },
+        {
+            test: /\.s?css$/,
+            use : [
+                'style-loader',
+                'css-loader',
+                'sass-loader'
+            ]
         }
     ];
 }

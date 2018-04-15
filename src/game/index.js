@@ -1,1 +1,2 @@
-console.log('Hello World!');
+import './game';
+import './index.scss';

@@ -1,0 +1,13 @@
+@import '../../node_modules/reset-css/reset';
+
+html, body {
+    height           : 100%;
+    background-color : #252525;
+}
+
+canvas {
+    position  : fixed;
+    left      : 50%;
+    top       : 50%;
+    transform : translate(-50%, -50%);
+}
