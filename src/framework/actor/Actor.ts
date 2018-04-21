@@ -1,11 +1,11 @@
 import {Attributes} from '../stats/attributes/Attributes';
-import {CoreStats} from '../stats/core/CoreStats';
+import {BasicAttributes} from '../stats/attributes/BasicAttributes';
+import {CoreStats} from '../stats/derived/CoreStats';
 import {Attribute} from '../stats/attributes/Attribute';
 import {Stat} from '../stats/Stat';
 import {StatsInit} from '../stats/StatsInit';
 
 export interface ActorInit {
-    class: Class;
     attributes: StatsInit<Attributes>;
 }
 
@@ -22,15 +22,16 @@ export class Actor implements Attributes, CoreStats {
     public luk: Attribute;
 
     // Core Stats
+    public mhp: Stat;
+    public mmp: Stat;
+    public mst: Stat;
     public atk: Stat;
     public def: Stat;
     public mat: Stat;
     public mdf: Stat;
-    public mhp: Stat;
-    public mmp: Stat;
-    public mst: Stat;
 
     constructor(init: ActorInit) {
+        Object.assign(this, new BasicAttributes(init.attributes));
         this.deriveStats();
     }
 
