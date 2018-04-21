@@ -13,7 +13,7 @@ export class ModifierLayers extends Array<ModifierLayer> {
         super(...modifierOrder.map(name => new ModifierLayer(name)));
     }
 
-    getLayer(name: ModifierType): ModifierLayer {
+    public getLayer(name: ModifierType): ModifierLayer {
         return this.find(layer => layer.name === name);
     }
 }

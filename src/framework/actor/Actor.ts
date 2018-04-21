@@ -1,7 +1,7 @@
+import {Attribute} from '../stats/attributes/Attribute';
 import {Attributes} from '../stats/attributes/Attributes';
 import {BasicAttributes} from '../stats/attributes/BasicAttributes';
 import {CoreStats} from '../stats/derived/CoreStats';
-import {Attribute} from '../stats/attributes/Attribute';
 import {Stat} from '../stats/Stat';
 import {StatsInit} from '../stats/StatsInit';
 
@@ -35,7 +35,7 @@ export class Actor implements Attributes, CoreStats {
         this.deriveStats();
     }
 
-    deriveStats(): void {
+    protected deriveStats(): void {
         // Core Stats
         // this.mhp = (this.vit * 6) +
         //     (this.str) +

@@ -1,8 +1,10 @@
-const sky      = require('../assets/sky.png'),
-      dude     = require('../assets/dude.png'),
-      platform = require('../assets/platform.png'),
-      bomb     = require('../assets/bomb.png'),
-      star     = require('../assets/star.png');
+const graphics = {
+    sky     : require('../assets/sky.png'),
+    dude    : require('../assets/dude.png'),
+    platform: require('../assets/platform.png'),
+    bomb    : require('../assets/bomb.png'),
+    star    : require('../assets/star.png')
+};
 
 export const config: GameConfig = {
     type   : Phaser.AUTO,
@@ -21,11 +23,11 @@ export const config: GameConfig = {
 };
 
 function preload() {
-    this.load.image('sky', sky);
-    this.load.image('ground', platform);
-    this.load.image('star', star);
-    this.load.image('bomb', bomb);
-    this.load.spritesheet('dude', dude, {frameWidth: 32, frameHeight: 48});
+    this.load.image('sky', graphics.sky);
+    this.load.image('ground', graphics.platform);
+    this.load.image('star', graphics.star);
+    this.load.image('bomb', graphics.bomb);
+    this.load.spritesheet('dude', graphics.dude, {frameWidth: 32, frameHeight: 48});
 }
 
 function create() {
@@ -39,9 +41,9 @@ function create() {
     platforms.create(50, 250, 'ground');
     platforms.create(750, 220, 'ground');
 
-    const player = this.player = this.physics.add.sprite(100, 450, 'dude');
-    player.setBounce(0.2);
-    player.setCollideWorldBounds(true);
+    this.player = this.physics.add.sprite(100, 450, 'dude');
+    this.player.setBounce(0.2);
+    this.player.setCollideWorldBounds(true);
 
     this.anims.create({
         key      : 'left',
@@ -66,9 +68,9 @@ function create() {
         repeat   : -1
     });
 
-    this.physics.add.collider(player, platforms);
+    this.physics.add.collider(this.player, platforms);
 
-    const stars = this.stars = this.physics.add.group({
+    this.stars = this.physics.add.group({
         key   : 'star',
         repeat: 11,
         setXY : {
@@ -78,7 +80,7 @@ function create() {
         }
     });
 
-    stars.children.iterate(child => {
+    this.stars.children.iterate(child => {
         child.setCollideWorldBounds(true);
         child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
         child.setBounceX(Phaser.Math.FloatBetween(0.4, 0.8));
@@ -86,12 +88,12 @@ function create() {
         child.setDragX(5);
     });
 
-    this.physics.add.collider(stars, platforms);
-    this.physics.add.overlap(player, stars, collectStar, null, this);
+    this.physics.add.collider(this.stars, platforms);
+    this.physics.add.overlap(this.player, this.stars, collectStar, null, this);
 
     const bombs = this.bombs = this.physics.add.group();
     this.physics.add.collider(bombs, platforms);
-    this.physics.add.collider(player, bombs, hitBomb, null, this);
+    this.physics.add.collider(this.player, bombs, hitBomb, null, this);
 
     this.score = 0;
     this.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000'});

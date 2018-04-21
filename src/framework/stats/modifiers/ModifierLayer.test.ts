@@ -1,5 +1,5 @@
-import {ModifierType} from './ModifierType';
 import {ModifierLayer} from './ModifierLayer';
+import {ModifierType} from './ModifierType';
 
 describe('ModifierLayer', () => {
     test('it should construct with the correct name', () => {
