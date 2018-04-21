@@ -3,6 +3,14 @@ import {config} from './config';
 export function rules(env) {
     return [
         {
+            test   : /\.ts$/,
+            include: config.src,
+            use    : [
+                'babel-loader',
+                'ts-loader'
+            ]
+        },
+        {
             test   : /\.js$/,
             use    : [
                 'babel-loader'

@@ -11,24 +11,27 @@
   "author": "Whiteout <whiteout.dev@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.6",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-flow": "^6.23.0",
     "chalk": "^2.3.2",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "faker": "^4.1.0",
     "file-loader": "^1.1.11",
-    "flow-bin": "^0.69.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^22.4.3",
     "node-sass": "^4.8.3",
     "raw-loader": "^0.5.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
+    "ts-jest": "^22.4.4",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.1",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.3"
@@ -39,11 +42,20 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.js$": "babel-jest"
+      "^.+\\.ts$": "ts-jest"
     },
+    "testRegex": "^.+\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
     "globals": {
       "WEBGL_RENDERER": true,
-      "CANVAS_RENDERER": true
+      "CANVAS_RENDERER": true,
+      "ts-jest": {
+        "useBabelrc": true
+      }
     }
   }
 }

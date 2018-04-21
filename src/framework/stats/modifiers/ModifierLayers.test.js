@@ -1,4 +1,5 @@
 import {ModifierLayers, modifierOrder} from './ModifierLayers';
+import {ModifierType} from './ModifierType';
 
 describe('ModifierLayers', () => {
     test('it should construct with an array of ModifierLayer objects in the correct order', () => {
@@ -7,6 +8,16 @@ describe('ModifierLayers', () => {
 
         modifierOrder.forEach((name, index) => {
             expect(modifierLayers[index].name).toBe(name);
+        });
+    });
+
+    test('it should be able to retrieve a layer by name', () => {
+        const modifierLayers = new ModifierLayers();
+
+        console.log(modifierLayers instanceof ModifierLayers);
+
+        Object.values(ModifierType).forEach(name => {
+            expect(modifierLayers.getLayer(name).name).toBe(name);
         });
     });
 });

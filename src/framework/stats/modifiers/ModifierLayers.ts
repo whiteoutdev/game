@@ -1,7 +1,7 @@
 import {ModifierLayer} from './ModifierLayer';
 import {ModifierType} from './ModifierType';
 
-export const modifierOrder: Array<$Values<ModifierType>> = [
+export const modifierOrder: ModifierType[] = [
     ModifierType.PERK,
     ModifierType.PASSIVE,
     ModifierType.EQUIPMENT,
@@ -13,7 +13,7 @@ export class ModifierLayers extends Array<ModifierLayer> {
         super(...modifierOrder.map(name => new ModifierLayer(name)));
     }
 
-    getLayer(name: $Values<ModifierType>): ModifierLayer {
+    getLayer(name: ModifierType): ModifierLayer {
         return this.find(layer => layer.name === name);
     }
 }

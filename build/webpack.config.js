@@ -10,7 +10,7 @@ export function webpackConfig(env) {
         entry      : {
             app   : [
                 'babel-polyfill',
-                path.join(config.game, 'index.js')
+                path.join(config.game, 'index.ts')
             ],
             vendor: [
                 'phaser'
@@ -27,6 +27,9 @@ export function webpackConfig(env) {
         plugins    : plugins(env),
         performance: {
             hints: false
+        },
+        resolve    : {
+            extensions: ['.ts', '.js', '.json']
         }
     };
 }

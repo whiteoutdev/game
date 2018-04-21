@@ -1,6 +1,10 @@
-import faker from 'faker';
+import * as faker from 'faker';
 import '../../testing/customMatchers';
 import {Random} from './Random';
+
+jest.mock('phaser', () => {
+    global.Phaser = require('../../testing/PhaserMock').PhaserMock;
+});
 
 const FUZZ_RUNS = 1000;
 
@@ -20,7 +24,7 @@ Now:\t\t${now}
             expect(random1.between(0, 1000)).toBeWithContext(random2.between(0, 1000), context);
             expect(random1.frac()).toBeWithContext(random2.frac(), context);
             expect(random1.integer()).toBeWithContext(random2.integer(), context);
-            expect(random1.integerInRange()).toBeWithContext(random2.integerInRange(), context);
+            expect(random1.integerInRange(0, 1000)).toBeWithContext(random2.integerInRange(0, 1000), context);
             expect(random1.normal()).toBeWithContext(random2.normal(), context);
             expect(random1.pick(pickArray)).toBeWithContext(random2.pick(pickArray), context);
             expect(random1.angle()).toBeWithContext(random2.angle(), context);
