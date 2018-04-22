@@ -1,7 +1,7 @@
 import {BasicStatModifier} from './BasicStatModifier';
 
 describe('StatModifier', () => {
-    test('it should construct using default values', () => {
+    it('should construct using default values', () => {
         const m1 = new BasicStatModifier(),
               m2 = new BasicStatModifier(100);
 
@@ -11,7 +11,7 @@ describe('StatModifier', () => {
         expect(m2.multiplier).toBe(1);
     });
 
-    test('it should use a custom toString() method', () => {
+    it('should use a custom toString() method', () => {
         const m1 = new BasicStatModifier(),
               m2 = new BasicStatModifier(100),
               m3 = new BasicStatModifier(100, 5);

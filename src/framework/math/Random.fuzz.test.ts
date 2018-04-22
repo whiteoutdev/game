@@ -9,7 +9,7 @@ jest.mock('phaser', () => {
 const FUZZ_RUNS = 1000;
 
 describe('Random Fuzz Tests', () => {
-    it('it should produce predictable results from any set of seeds', () => {
+    it('should produce predictable results from any set of seeds', () => {
         for (let i = 0; i < FUZZ_RUNS; i++) {
             const seeds     = faker.random.words().split(' '),
                   random1   = new Random(...seeds),

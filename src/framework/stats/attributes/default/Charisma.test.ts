@@ -2,7 +2,7 @@ import {checkAttributeNameAndBase} from '../../../../testing/framework/stats/att
 import {Charisma} from './Charisma';
 
 describe('Charisma', () => {
-    test('it should construct with the correct name and base value', () => {
+    it('it should construct with the correct name and base value', () => {
         checkAttributeNameAndBase(new Charisma(100), 'cha', 100);
     });
 });

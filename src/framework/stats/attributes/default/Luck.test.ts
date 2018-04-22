@@ -2,7 +2,7 @@ import {checkAttributeNameAndBase} from '../../../../testing/framework/stats/att
 import {Luck} from './Luck';
 
 describe('Luck', () => {
-    test('it should construct with the correct name and base value', () => {
+    it('should construct with the correct name and base value', () => {
         checkAttributeNameAndBase(new Luck(100), 'luk', 100);
     });
 });
