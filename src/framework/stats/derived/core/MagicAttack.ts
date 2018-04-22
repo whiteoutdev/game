@@ -5,4 +5,9 @@ export class MagicAttack extends CoreStat {
     constructor(attributes: Attributes) {
         super('mat', attributes);
     }
+
+    public getBaseValue(): number {
+        // TODO: Implement
+        return 0;
+    }
 }

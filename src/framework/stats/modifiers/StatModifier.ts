@@ -1,4 +1,4 @@
 export interface StatModifier {
-    addend: number;
-    multiplier: number;
+    readonly addend: number;
+    readonly multiplier: number;
 }

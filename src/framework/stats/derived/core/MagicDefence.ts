@@ -5,4 +5,9 @@ export class MagicDefence extends CoreStat {
     constructor(attributes: Attributes) {
         super('mdf', attributes);
     }
+
+    public getBaseValue(): number {
+        // TODO: Implement
+        return 0;
+    }
 }

@@ -1,9 +1,8 @@
+import {checkAttributeNameAndBase} from '../../../../testing/framework/stats/attributes/AttributeTestingUtils';
 import {Resilience} from './Resilience';
 
 describe('Resilience', () => {
     test('it should construct with the correct name and base value', () => {
-        const resilience = new Resilience(100);
-        expect(resilience.name).toBe('res');
-        expect(resilience.base).toBe(100);
+        checkAttributeNameAndBase(new Resilience(100), 'res', 100);
     });
 });

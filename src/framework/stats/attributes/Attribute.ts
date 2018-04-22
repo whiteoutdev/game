@@ -7,4 +7,8 @@ export abstract class Attribute extends Stat {
         super(name);
         this.base = base;
     }
+
+    public getBaseValue(): number {
+        return this.base;
+    }
 }

@@ -5,4 +5,9 @@ export class Defence extends CoreStat {
     constructor(attributes: Attributes) {
         super('def', attributes);
     }
+
+    public getBaseValue(): number {
+        // TODO: Implement
+        return 0;
+    }
 }

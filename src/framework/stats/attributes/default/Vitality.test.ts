@@ -1,9 +1,8 @@
+import {checkAttributeNameAndBase} from '../../../../testing/framework/stats/attributes/AttributeTestingUtils';
 import {Vitality} from './Vitality';
 
 describe('Vitality', () => {
     test('it should construct with the correct name and base value', () => {
-        const vitality = new Vitality(100);
-        expect(vitality.name).toBe('vit');
-        expect(vitality.base).toBe(100);
+        checkAttributeNameAndBase(new Vitality(100), 'vit', 100);
     });
 });

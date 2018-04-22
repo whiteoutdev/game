@@ -5,4 +5,9 @@ export class MaxHp extends CoreStat {
     constructor(attributes: Attributes) {
         super('mhp', attributes);
     }
+
+    public getBaseValue(): number {
+        // TODO: Implement
+        return 0;
+    }
 }
