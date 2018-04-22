@@ -6,4 +6,9 @@ describe('Max HP', () => {
         const maxHp = new MaxHp(new BasicAttributes());
         expect(maxHp.name).toBe('mhp');
     });
+
+    it('should have a base value of 10 when all attributes are 1', () => {
+        const maxHp = new MaxHp(new BasicAttributes());
+        expect(maxHp.getBaseValue()).toBe(10);
+    });
 });

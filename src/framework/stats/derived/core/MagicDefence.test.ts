@@ -6,4 +6,9 @@ describe('MagicDefence', () => {
         const magicDefence = new MagicDefence(new BasicAttributes());
         expect(magicDefence.name).toBe('mdf');
     });
+
+    it('should have a base value of 2 when all attributes are 1', () => {
+        const magicDefence = new MagicDefence(new BasicAttributes());
+        expect(magicDefence.getBaseValue()).toBe(2);
+    });
 });

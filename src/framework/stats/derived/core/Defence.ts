@@ -1,4 +1,5 @@
 import {Attributes} from '../../attributes/Attributes';
+import {StatsInit} from '../../StatsInit';
 import {CoreStat} from '../CoreStat';
 
 export class Defence extends CoreStat {
@@ -6,8 +7,13 @@ export class Defence extends CoreStat {
         super('def', attributes);
     }
 
-    public getBaseValue(): number {
-        // TODO: Implement
-        return 0;
+    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+        return {
+            vit: 0.75,
+            str: 0.2,
+            res: 0.75,
+            wil: 0.2,
+            luk: 0.1
+        };
     }
 }

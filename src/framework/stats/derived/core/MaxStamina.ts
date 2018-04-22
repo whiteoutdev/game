@@ -1,4 +1,5 @@
 import {Attributes} from '../../attributes/Attributes';
+import {StatsInit} from '../../StatsInit';
 import {CoreStat} from '../CoreStat';
 
 export class MaxStamina extends CoreStat {
@@ -6,8 +7,14 @@ export class MaxStamina extends CoreStat {
         super('mst', attributes);
     }
 
-    public getBaseValue(): number {
-        // TODO: Implement
-        return 0;
+    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+        return {
+            vit: 2.5,
+            res: 5,
+            str: 1,
+            wil: 0.5,
+            foc: 0.5,
+            luk: 0.5
+        };
     }
 }

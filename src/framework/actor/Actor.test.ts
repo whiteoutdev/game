@@ -1,7 +1,7 @@
 import {Actor} from './Actor';
 
 describe('Actor', () => {
-    test('it constructs and initialises its fields', () => {
+    it('should construct and initialise its fields', () => {
         const actor = new Actor({
             attributes: {
                 vit: 1,
@@ -16,15 +16,15 @@ describe('Actor', () => {
             }
         });
 
-        expect(actor.vit).toBe(1);
-        expect(actor.str).toBe(1);
-        expect(actor.res).toBe(1);
-        expect(actor.agi).toBe(1);
-        expect(actor.dex).toBe(1);
-        expect(actor.wil).toBe(1);
-        expect(actor.foc).toBe(1);
-        expect(actor.cha).toBe(1);
-        expect(actor.luk).toBe(1);
+        expect(actor.vit.getBaseValue()).toBe(1);
+        expect(actor.str.getBaseValue()).toBe(1);
+        expect(actor.res.getBaseValue()).toBe(1);
+        expect(actor.agi.getBaseValue()).toBe(1);
+        expect(actor.dex.getBaseValue()).toBe(1);
+        expect(actor.wil.getBaseValue()).toBe(1);
+        expect(actor.foc.getBaseValue()).toBe(1);
+        expect(actor.cha.getBaseValue()).toBe(1);
+        expect(actor.luk.getBaseValue()).toBe(1);
 
         expect(actor.mhp).toBeDefined();
         expect(actor.mmp).toBeDefined();

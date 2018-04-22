@@ -1,8 +1,15 @@
 import {Attribute} from '../stats/attributes/Attribute';
 import {Attributes} from '../stats/attributes/Attributes';
 import {BasicAttributes} from '../stats/attributes/BasicAttributes';
+import {BasicCoreStats} from '../stats/derived/BasicCoreStats';
+import {Attack} from '../stats/derived/core/Attack';
+import {Defence} from '../stats/derived/core/Defence';
+import {MagicAttack} from '../stats/derived/core/MagicAttack';
+import {MagicDefence} from '../stats/derived/core/MagicDefence';
+import {MaxHp} from '../stats/derived/core/MaxHp';
+import {MaxMp} from '../stats/derived/core/MaxMp';
+import {MaxStamina} from '../stats/derived/core/MaxStamina';
 import {CoreStats} from '../stats/derived/CoreStats';
-import {Stat} from '../stats/Stat';
 import {StatsInit} from '../stats/StatsInit';
 
 export interface ActorInit {
@@ -22,50 +29,16 @@ export class Actor implements Attributes, CoreStats {
     public luk: Attribute;
 
     // Core Stats
-    public mhp: Stat;
-    public mmp: Stat;
-    public mst: Stat;
-    public atk: Stat;
-    public def: Stat;
-    public mat: Stat;
-    public mdf: Stat;
+    public mhp: MaxHp;
+    public mmp: MaxMp;
+    public mst: MaxStamina;
+    public atk: Attack;
+    public def: Defence;
+    public mat: MagicAttack;
+    public mdf: MagicDefence;
 
     constructor(init: ActorInit) {
         Object.assign(this, new BasicAttributes(init.attributes));
-        this.deriveStats();
-    }
-
-    protected deriveStats(): void {
-        // Core Stats
-        // this.mhp = (this.vit * 6) +
-        //     (this.str) +
-        //     (this.res * 2) +
-        //     (this.wil);
-        // this.mmp = (this.res) +
-        //     (this.wil * 3) +
-        //     (this.foc * 6);
-        // this.mst = (this.vit * 3) +
-        //     (this.str * 2) +
-        //     (this.res * 3) +
-        //     (this.agi) +
-        //     (this.wil);
-        // this.atk = (this.vit) +
-        //     (this.str * 4) +
-        //     (this.dex) +
-        //     (this.luk * 0.25);
-        // this.def = (this.vit * 2) +
-        //     (this.str) +
-        //     (this.res * 2) +
-        //     (this.wil) +
-        //     (this.luk * 0.25);
-        // this.mat = (this.wil * 2) +
-        //     (this.foc * 3) +
-        //     (this.cha) +
-        //     (this.luk * 0.25);
-        // this.mdf = (this.vit) +
-        //     (this.res) +
-        //     (this.wil * 3) +
-        //     (this.foc) +
-        //     (this.luk * 0.25);
+        Object.assign(this, new BasicCoreStats(this));
     }
 }

@@ -2,7 +2,7 @@ import {ModifierLayer} from './ModifierLayer';
 import {ModifierType} from './ModifierType';
 
 describe('ModifierLayer', () => {
-    test('it should construct with the correct name', () => {
+    it('should construct with the correct name', () => {
         Object.values(ModifierType).forEach(name => {
             const modifierLayer = new ModifierLayer(name);
             expect(modifierLayer.name).toBe(name);

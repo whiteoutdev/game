@@ -1,3 +1,4 @@
+import {BuiltInSubclass} from '../../../common/BuiltInSubclass';
 import {Logger} from '../../logging/Logger';
 import {ModifierLayer} from './ModifierLayer';
 import {ModifierType} from './ModifierType';
@@ -9,9 +10,11 @@ export const modifierOrder: ModifierType[] = [
     ModifierType.TEMPORARY
 ];
 
+@BuiltInSubclass()
 export class ModifierLayers extends Array<ModifierLayer> {
     constructor() {
-        super(...modifierOrder.map(name => new ModifierLayer(name)));
+        super(...modifierOrder.map(type => new ModifierLayer(type)));
+        // modifierOrder.forEach(type => this.push(new ModifierLayer(type)));
     }
 
     public getLayer(name: ModifierType): ModifierLayer {

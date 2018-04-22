@@ -1,4 +1,5 @@
 import {Attributes} from '../../attributes/Attributes';
+import {StatsInit} from '../../StatsInit';
 import {CoreStat} from '../CoreStat';
 
 export class MaxHp extends CoreStat {
@@ -6,8 +7,12 @@ export class MaxHp extends CoreStat {
         super('mhp', attributes);
     }
 
-    public getBaseValue(): number {
-        // TODO: Implement
-        return 0;
+    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+        return {
+            vit: 6,
+            str: 1,
+            res: 2,
+            wil: 1
+        };
     }
 }

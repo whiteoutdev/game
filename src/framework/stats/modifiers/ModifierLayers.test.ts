@@ -14,8 +14,6 @@ describe('ModifierLayers', () => {
     test('it should be able to retrieve a layer by name', () => {
         const modifierLayers = new ModifierLayers();
 
-        console.log(modifierLayers instanceof ModifierLayers);
-
         Object.values(ModifierType).forEach(name => {
             expect(modifierLayers.getLayer(name).name).toBe(name);
         });
