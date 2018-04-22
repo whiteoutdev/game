@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --inline --hot",
     "lint": "tslint -c tslint.json -t stylish 'src/**/*.ts'",
     "lint:fix": "tslint -c tslint.json -t stylish --fix 'src/**/*.ts'",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "Whiteout <whiteout.dev@gmail.com>",
   "license": "ISC",

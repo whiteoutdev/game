@@ -1,3 +1,6 @@
+import Sprite = Phaser.Physics.Arcade.Sprite;
+import Image = Phaser.Physics.Arcade.Image;
+
 const graphics = {
     sky     : require('../assets/sky.png'),
     dude    : require('../assets/dude.png'),
@@ -22,7 +25,7 @@ export const config: GameConfig = {
     scene  : {preload, create, update}
 };
 
-function preload() {
+function preload(): void {
     this.load.image('sky', graphics.sky);
     this.load.image('ground', graphics.platform);
     this.load.image('star', graphics.star);
@@ -30,7 +33,7 @@ function preload() {
     this.load.spritesheet('dude', graphics.dude, {frameWidth: 32, frameHeight: 48});
 }
 
-function create() {
+function create(): void {
     this.add.image(400, 300, 'sky');
 
     const platforms = this.physics.add.staticGroup();
@@ -99,7 +102,7 @@ function create() {
     this.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000'});
 }
 
-function update() {
+function update(): void {
     const cursors = this.input.keyboard.createCursorKeys(),
           player  = this.player;
 
@@ -119,7 +122,7 @@ function update() {
     }
 }
 
-function collectStar(player, star) {
+function collectStar(player: Sprite, star: Image): void {
     star.disableBody(true, true);
     this.score += 10;
     this.scoreText.setText(`score: ${this.score}`);
@@ -139,7 +142,7 @@ function collectStar(player, star) {
     }
 }
 
-function hitBomb(player, bomb) {
+function hitBomb(player: Sprite, bomb: Image): void {
     this.physics.pause();
     player.setTint(0xff0000);
     player.anims.play('turn');

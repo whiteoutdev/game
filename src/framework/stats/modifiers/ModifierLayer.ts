@@ -4,11 +4,11 @@ import {StatModifier} from './StatModifier';
 
 @BuiltInSubclass()
 export class ModifierLayer extends Array<StatModifier> implements StatModifier {
-    public get addend() {
+    public get addend(): number {
         return this.reduce((sum, modifier) => sum + modifier.addend, 0);
     }
 
-    public get multiplier() {
+    public get multiplier(): number {
         const [buff, debuff] = this.reduce((aggregate, modifier) => {
             const multiplier = modifier.multiplier;
             if (multiplier > 1) {

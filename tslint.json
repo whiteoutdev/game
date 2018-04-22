@@ -23,6 +23,12 @@
         "multiline": "never",
         "singleline": "never"
       }
+    ],
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration"
     ]
   },
   "rulesDirectory": []

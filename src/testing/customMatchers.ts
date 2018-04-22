@@ -9,7 +9,7 @@ declare global {
 }
 
 expect.extend({
-    toBeWithContext(received, expected, context) {
+    toBeWithContext(received: any, expected: any, context: any): any {
         const pass = Object.is(received, expected);
         return {
             message: () => `
