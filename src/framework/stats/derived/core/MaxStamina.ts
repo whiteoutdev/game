@@ -7,7 +7,7 @@ export class MaxStamina extends CoreStat {
         super('mst', attributes);
     }
 
-    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+    protected getAttributeWeights(): Partial<StatsInit<Attributes>> {
         return {
             vit: 2.5,
             res: 5,

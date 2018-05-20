@@ -7,7 +7,7 @@ export class MagicDefence extends CoreStat {
         super('mdf', attributes);
     }
 
-    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+    protected getAttributeWeights(): Partial<StatsInit<Attributes>> {
         return {
             vit: 0.1,
             res: 0.25,

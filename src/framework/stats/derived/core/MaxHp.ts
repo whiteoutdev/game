@@ -7,7 +7,7 @@ export class MaxHp extends CoreStat {
         super('mhp', attributes);
     }
 
-    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+    protected getAttributeWeights(): Partial<StatsInit<Attributes>> {
         return {
             vit: 6,
             str: 1,

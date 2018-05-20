@@ -7,7 +7,7 @@ export class MagicAttack extends CoreStat {
         super('mat', attributes);
     }
 
-    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+    protected getAttributeWeights(): Partial<StatsInit<Attributes>> {
         return {
             wil: 0.6,
             foc: 1.2,

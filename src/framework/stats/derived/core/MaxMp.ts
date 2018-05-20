@@ -7,7 +7,7 @@ export class MaxMp extends CoreStat {
         super('mmp', attributes);
     }
 
-    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+    protected getAttributeWeights(): Partial<StatsInit<Attributes>> {
         return {
             res: 1,
             wil: 3,

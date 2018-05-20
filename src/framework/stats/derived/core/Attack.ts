@@ -7,7 +7,7 @@ export class Attack extends CoreStat {
         super('atk', attributes);
     }
 
-    public getAttributeWeights(): Partial<StatsInit<Attributes>> {
+    protected getAttributeWeights(): Partial<StatsInit<Attributes>> {
         return {
             vit: 0.3,
             str: 1.3,
