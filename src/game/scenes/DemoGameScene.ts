@@ -1,8 +1,9 @@
 import 'phaser';
+import Text = Phaser.GameObjects.Text;
 import Group = Phaser.Physics.Arcade.Group;
 import Image = Phaser.Physics.Arcade.Image;
 import Sprite = Phaser.Physics.Arcade.Sprite;
-import Text = Phaser.GameObjects.Text;
+import Scene = Phaser.Scene;
 
 const graphics = {
     sky     : require('../assets/sky.png'),
@@ -12,7 +13,7 @@ const graphics = {
     star    : require('../assets/star.png')
 };
 
-export class DemoGameScene extends Phaser.Scene {
+export class DemoGameScene extends Scene {
     private player: Sprite;
     private stars: Group;
     private bombs: Group;

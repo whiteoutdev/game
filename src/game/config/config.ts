@@ -1,9 +1,10 @@
 import {DemoGameScene} from '../scenes/DemoGameScene';
+import {DemoTilesheetScene} from '../scenes/DemoTilesheetScene';
 
 export const config: GameConfig = {
     type   : Phaser.AUTO,
-    width  : 800,
-    height : 600,
+    width  : 960,
+    height : 640,
     physics: {
         default: 'arcade',
         arcade : {
@@ -13,5 +14,5 @@ export const config: GameConfig = {
             debug  : false
         }
     },
-    scene  : new DemoGameScene()
+    scene  : new DemoTilesheetScene()
 };

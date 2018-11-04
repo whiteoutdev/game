@@ -1,4 +1,4 @@
-import {BuiltInSubclass} from '../../../common/BuiltInSubclass';
+import {BuiltInSubclass} from '../../../common/class-utils/BuiltInSubclass';
 import {Logger} from '../../logging/Logger';
 import {ModifierLayer} from './ModifierLayer';
 import {ModifierType} from './ModifierType';

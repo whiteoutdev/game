@@ -1,4 +1,4 @@
-import {BuiltInSubclass} from '../../../common/BuiltInSubclass';
+import {BuiltInSubclass} from '../../../common/class-utils/BuiltInSubclass';
 import {ModifierType} from './ModifierType';
 import {StatModifier} from './StatModifier';
 
